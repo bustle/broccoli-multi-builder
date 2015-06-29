@@ -1,0 +1,24 @@
+{
+  "name": "broccoli-multi-builder",
+  "version": "0.1.0",
+  "description": "write and consume es6 source code, build to amd or cjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "broccoli"
+  ],
+  "author": "Cory Forsyth <cory.forsyth@gmail.com> (http://coryforsyth.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "broccoli": "^0.16.3",
+    "broccoli-babel-transpiler": "^5.2.3",
+    "broccoli-concat": "0.0.13",
+    "broccoli-funnel": "^0.2.3",
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-stew": "^0.3.3",
+    "exists-sync": "0.0.3",
+    "loader.js": "^3.2.0"
+  }
+}
