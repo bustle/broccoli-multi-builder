@@ -64,5 +64,6 @@ If you are writing code for another package that uses broccoli-multi-builder to 
 If you are consuming another library built with broccoli-multi-builder:
 
   * install it using `npm install other-package`
+  * add its name to the array of `vendoredModules` that you pass to the `buildAMD` or `buildCJS` methods in your Brocfile
   * in your own `src/` es6 code, it should be fine to import default (`import X from "other-package"`) and named exports (`import { namedThing} from "other-package"`)
-  * you **must not** import from anywhere but the module root path (i.e. cannot `import X from "other-package/thing"`)
+  * you **must not** import from anywhere but the module root path (i.e. cannot `import X from "other-package/thing"`) of a vendored module
