@@ -40,10 +40,10 @@ This is for library authors who want to:
 
 ### Globals-specific
 
-  * The globals build takes the AMD output and:
+  * The globals build takes the AMD tree and:
     * includes the [loader.js](https://www.npmjs.com/package/loader.js) AMD loader
+    * in the bottom of the file, appends `require('<packageName>')["registerGlobal"](window, document);`
     * wraps the file in an IIFE
-    * in the bottom of the file, before closing the IIFE, appends `require('<packageName>')["registerGlobal"](window, document);`
     * It expects that your package will export a function called `registerGlobal` that it can call with the arguments `(window, document)`. To override this set `options.registerGlobalExport` to a different string. The `registerGlobal` named export from your index.js is where you would do something like `window.MyPackageName = X;` in order to allow a third-party to use your library as the global `MyPackageName`.
 
 ### CommonJS-specific
@@ -92,7 +92,6 @@ var mergeTrees = require('broccoli-merge-trees');
 
 var amdOptions = {
   libDirName: 'path/to/es6/src/directory', // default: 'lib'
-  isGlobal: false,
   packageName: 'my-package', // influences the name of the built file and directories,
                              // and the source root for the amd modules
   vendoredModules: [] // the npm package names of any other modules that your es6 code
@@ -102,7 +101,6 @@ var amdOptions = {
 
 var globalOptions = {
   libDirName: 'path/to/es6/src/directory', // default: 'lib'
-  isGlobal: true,
   registerGlobalExport: 'registerGlobal', // default: 'registerGlobal'
   packageName: 'my-package', // influences the name of the built file and directories,
                              // and the source root for the amd modules
@@ -113,7 +111,6 @@ var globalOptions = {
 
 var cjsOptions = {
   libDirName: 'path/to/es6/src/directory', // default: 'lib'
-  // isGlobal is not relevant for a cjs build
   packageName: 'my-package',
   vendoredModules: [] // same as the vendored modules for the amdOptions
 }

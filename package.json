@@ -1,6 +1,6 @@
 {
   "name": "broccoli-multi-builder",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "write and consume es6 source code, build to amd, globals or commonjs",
   "main": "index.js",
   "repository": "https://github.com/201-created/broccoli-multi-builder",
