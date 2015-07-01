@@ -1,7 +1,7 @@
 {
   "name": "broccoli-multi-builder",
-  "version": "0.1.0",
-  "description": "write and consume es6 source code, build to amd or cjs",
+  "version": "0.2.0",
+  "description": "write and consume es6 source code, build to amd, globals or commonjs",
   "main": "index.js",
   "repository": "https://github.com/201-created/broccoli-multi-builder",
   "scripts": {
@@ -20,6 +20,7 @@
     "broccoli-merge-trees": "^0.2.1",
     "broccoli-stew": "^0.3.3",
     "exists-sync": "0.0.3",
-    "loader.js": "^3.2.0"
+    "loader.js": "^3.2.0",
+    "lodash": "^3.10.0"
   }
 }
