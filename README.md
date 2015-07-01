@@ -34,7 +34,7 @@ This is for library authors who want to:
   * dependencies must also be written in es6 with import/export statements
   * dependencies' source code is in a `lib/` dir (configurable) in that dependency's published npm package
     * this is necessary because when broccoli-multi-builder builds your project for AMD it
-      transpiles and bundles the dependencie's source as well, so it must be present
+      transpiles and bundles the dependency's source as well, so it must be present
   * An AMD loader is not included by default (to include one, set `options.loader = true`)
   * The AMD output file is not wrapped in an IIFE
 
@@ -48,7 +48,7 @@ This is for library authors who want to:
 
 ### CommonJS-specific
 
-  * The "main" file in your package.json must point to "dist/commonjs/<packageName>/index.js" (broccoli-multi-builder will check for this)
+  * The "main" entry in your package.json must point to `"dist/commonjs/<packageName>/index.js"` (broccoli-multi-builder will check for this)
   * Third parties who use your library via commonjs will only be able to `require('your-package-name');`. `require` calls for sub-directories (like `require('your-package/thing');`) will not work properly due to the way node's module require system works (it looks for paths relative to the directory root, not relative to the location of the "main" file) and the fact that broccoli-multi-builder publishes your commonJS code in `dist/commonjs`.
   * The CommonJS build does not attempt to bundle any of the listed vendoredModule dependencies (those should be listed in this library's package.json `dependencies` so that the transpiled code can use node's standard `require` mechanism to bring them in)
 
@@ -128,7 +128,7 @@ so you may need to `rm -rf dist` first.
 
 Read more about [broccoli.js here](https://github.com/broccolijs/broccoli).
 
-## Caveats
+## More Caveats
 
 If you are consuming another library built with broccoli-multi-builder:
 
