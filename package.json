@@ -15,13 +15,13 @@
   "license": "MIT",
   "dependencies": {
     "broccoli": "^0.16.3",
+    "broccoli-amd-loader": "^0.1.0",
     "broccoli-babel-transpiler": "^5.2.3",
     "broccoli-concat": "0.0.13",
     "broccoli-funnel": "^0.2.3",
     "broccoli-merge-trees": "^0.2.1",
     "broccoli-stew": "^0.3.3",
     "exists-sync": "0.0.3",
-    "loader.js": "^3.2.0",
     "lodash": "^3.10.0"
   }
 }
