@@ -3,7 +3,7 @@
   "version": "0.2.6",
   "description": "write and consume es6 source code, build to amd, globals or commonjs",
   "main": "index.js",
-  "repository": "https://github.com/201-created/broccoli-multi-builder",
+  "repository": "https://github.com/bustlelabs/broccoli-multi-builder",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
