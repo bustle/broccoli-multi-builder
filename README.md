@@ -141,6 +141,8 @@ If you are consuming another library built with broccoli-multi-builder:
   * you **must not** import from anywhere but the module root path (i.e. cannot `import X from "other-package/thing"`) of a vendored module
 
 Remember that npm automatically ignores everything in your `.gitignore` file, so if you
-are sensibly ignoring the built artifacts that show up in your `dist/` directory, you will need
-to create an `.npmignore` file that does **not** list `dist/` so that npm will not ignore `dist/` when
-you publish. Also, remember to build into your `dist/` directory before publishing a new version of your library.
+are sensibly ignoring the built artifacts that show up in your `dist/` directory, you can do one of these:
+
+  * (preferred, imo) ensure the `"files"` key in your `package.json` lists the directories you want to publish (see [docs](https://docs.npmjs.com/files/package.json#files))
+  * create an `.npmignore` file that does **not** list `dist/`. That way npm will not ignore `dist/` when
+you publish
