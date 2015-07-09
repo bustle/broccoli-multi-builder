@@ -145,4 +145,4 @@ are sensibly ignoring the built artifacts that show up in your `dist/` directory
 
   * (preferred, imo) ensure the `"files"` key in your `package.json` lists the directories you want to publish (see [docs](https://docs.npmjs.com/files/package.json#files))
   * create an `.npmignore` file that does **not** list `dist/`. That way npm will not ignore `dist/` when
-you publish
+you publish (see [docs](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package))
