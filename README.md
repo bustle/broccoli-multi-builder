@@ -4,7 +4,7 @@
 
 This is for library authors who want to:
 
-  * Write ES6/ES7 source code (and use its imports/exports for code organization)
+  * Write ~~ES6~~ ES2015 (and beyond) source code (and use its imports/exports for code organization)
   * Publish their code in a browser-friendly format (AMD or Global) and/or a Node-friendly format (CommonJS)
   * Consume other libraries (via `import "other-codebase"`) in their source code and still be able to publish to the above formats
 
