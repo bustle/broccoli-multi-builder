@@ -83,7 +83,8 @@ To build your es6-based library using `broccoli-multi-builder` for amd, global o
 
   * install and save broccoli-multi-builder: `npm install --save-dev broccoli-multi-builder`
   * install the broccoli cli tool: `npm install --global broccoli-cli`
-  * install broccoli-merge-trees: `npm install --save-dev broccoli-merge-trees`
+  * install and save broccoli as a dependency: `npm install --save-dev broccoli`
+  * install and save broccoli-merge-trees: `npm install --save-dev broccoli-merge-trees`
 
 Add a `Brocfile.js` file in the root of your project with the following code:
 ```
@@ -121,6 +122,8 @@ module.exports = mergeTrees([
   multiBuilder.build('commonjs', cjsOptions)
 ]);
 ```
+
+Ensure you have an `index.js` file in the root of your lib directory (e.g. `lib/index.js`) that has a default export. If you are building for globals mode also ensure your `index.js` exports a function named `registerGlobal`.
 
 Then do a `broccoli build dist` to put your cjs and amd output into `dist/`.
 Note that broccoli will complain about writing to a directory that already exists
