@@ -4,7 +4,7 @@
 
 This is for library authors who want to:
 
-  * Write ES6/ES7 source code (and use its imports/exports for code organization)
+  * Write ~~ES6~~ ES2015 (and beyond) source code (and use its imports/exports for code organization)
   * Publish their code in a browser-friendly format (AMD or Global) and/or a Node-friendly format (CommonJS)
   * Consume other libraries (via `import "other-codebase"`) in their source code and still be able to publish to the above formats
 
@@ -83,7 +83,8 @@ To build your es6-based library using `broccoli-multi-builder` for amd, global o
 
   * install and save broccoli-multi-builder: `npm install --save-dev broccoli-multi-builder`
   * install the broccoli cli tool: `npm install --global broccoli-cli`
-  * install broccoli-merge-trees: `npm install --save-dev broccoli-merge-trees`
+  * install and save broccoli as a dependency: `npm install --save-dev broccoli`
+  * install and save broccoli-merge-trees: `npm install --save-dev broccoli-merge-trees`
 
 Add a `Brocfile.js` file in the root of your project with the following code:
 ```
@@ -122,6 +123,8 @@ module.exports = mergeTrees([
 ]);
 ```
 
+Ensure you have an `index.js` file in the root of your lib directory (e.g. `lib/index.js`) that has a default export. If you are building for globals mode also ensure your `index.js` exports a function named `registerGlobal`.
+
 Then do a `broccoli build dist` to put your cjs and amd output into `dist/`.
 Note that broccoli will complain about writing to a directory that already exists
 so you may need to `rm -rf dist` first.
@@ -138,6 +141,8 @@ If you are consuming another library built with broccoli-multi-builder:
   * you **must not** import from anywhere but the module root path (i.e. cannot `import X from "other-package/thing"`) of a vendored module
 
 Remember that npm automatically ignores everything in your `.gitignore` file, so if you
-are sensibly ignoring the built artifacts that show up in your `dist/` directory, you will need
-to create an `.npmignore` file that does **not** list `dist/` so that npm will not ignore `dist/` when
-you publish. Also, remember to build into your `dist/` directory before publishing a new version of your library.
+are sensibly ignoring the built artifacts that show up in your `dist/` directory, you can do one of these:
+
+  * (preferred, imo) ensure the `"files"` key in your `package.json` lists the directories you want to publish (see [docs](https://docs.npmjs.com/files/package.json#files))
+  * create an `.npmignore` file that does **not** list `dist/`. That way npm will not ignore `dist/` when
+you publish (see [docs](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package))
