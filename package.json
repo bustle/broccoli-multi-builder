@@ -1,6 +1,6 @@
 {
   "name": "broccoli-multi-builder",
-  "version": "0.2.7",
+  "version": "0.2.8-beta.2",
   "description": "write and consume es6 source code, build to amd, globals or commonjs",
   "main": "index.js",
   "repository": "https://github.com/bustlelabs/broccoli-multi-builder",
@@ -19,7 +19,7 @@
     "broccoli-babel-transpiler": "^5.2.3",
     "broccoli-funnel": "^0.2.3",
     "broccoli-merge-trees": "^0.2.1",
-    "broccoli-sourcemap-concat": "^1.0.2",
+    "broccoli-sourcemap-concat": "^2.0.0",
     "broccoli-stew": "^0.3.3",
     "exists-sync": "0.0.3",
     "lodash": "^3.10.0"
