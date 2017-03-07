@@ -20,7 +20,6 @@
     "broccoli-funnel": "^0.2.3",
     "broccoli-merge-trees": "^0.2.1",
     "broccoli-sourcemap-concat": "^2.0.0",
-    "broccoli-stew": "^0.3.3",
     "exists-sync": "0.0.3",
     "lodash": "^3.10.0"
   }
